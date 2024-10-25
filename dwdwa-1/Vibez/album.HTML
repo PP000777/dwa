@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Música - Vibez</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input[type="text"], input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function salvarMusica() {
+            const nomeAlbum = document.getElementById("nomeAlbum").value;
+            const nomeMusica = document.getElementById("nomeMusica").value;
+            const imagemAlbum = document.getElementById("imagemAlbum").files[0];
+            const arquivoMusica = document.getElementById("arquivoMusica").files[0];
+
+            if (!nomeAlbum || !nomeMusica || !imagemAlbum || !arquivoMusica) {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
+
+            // Converter a imagem e música para Base64
+            const readerImagem = new FileReader();
+            const readerMusica = new FileReader();
+
+            readerImagem.onload = function(e) {
+                const imagemBase64 = e.target.result;
+                
+                readerMusica.onload = function(e) {
+                    const musicaBase64 = e.target.result;
+
+                    // Criar objeto de música
+                    const novaMusica = {
+                        album: nomeAlbum,
+                        musica: nomeMusica,
+                        imagem: imagemBase64,
+                        arquivo: musicaBase64
+                    };
+
+                    // Salvar no LocalStorage
+                    let musicas = JSON.parse(localStorage.getItem("musicas")) || [];
+                    musicas.push(novaMusica);
+                    localStorage.setItem("musicas", JSON.stringify(musicas));
+
+                    alert("Música cadastrada com sucesso!");
+                    window.location.href = "index.html"; // Volta para a home
+                };
+                readerMusica.readAsDataURL(arquivoMusica);
+            };
+            readerImagem.readAsDataURL(imagemAlbum);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Cadastro de Música</h1>
+    <form onsubmit="event.preventDefault(); salvarMusica();">
+        <input type="text" id="nomeAlbum" placeholder="Nome do Álbum" required>
+        <input type="text" id="nomeMusica" placeholder="Nome da Música" required>
+        <input type="file" id="imagemAlbum" accept="image/*" required>
+        <input type="file" id="arquivoMusica" accept="audio/mp3" required>
+        <button type="submit">Cadastrar Música</button>
+    </form>
+
+</body>
+</html>

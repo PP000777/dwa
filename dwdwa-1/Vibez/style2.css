@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; 
+    background-color: #121212; /* Preto */
+    color: #FFFFFF; /* Texto claro */
+}
+
+.barra-de-cima {
+    background-color: #1F1F1F; /* Preto escuro */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.voltar {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.secao-album {
+    text-align: center;
+    padding: 20px;
+}
+
+.secao-album img {
+    width: 250px; /* Tamanho do álbum */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para a imagem */
+    margin-bottom: 20px;
+}
+
+.lista-musicas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.musica {
+    background-color: #61afdc; /* Azul ciano claro */
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px; /* Bordas arredondadas */
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Transições */
+    width: 100%;
+    max-width: 300px; /* Largura máxima do botão */
+    box-shadow: 0 0 10px rgba(97, 175, 220, 0.5), 0 0 20px rgba(97, 175, 220, 0.3); /* Efeito neon */
+}
+
+.musica:hover {
+    background-color: #007BB8; /* Azul mais escuro ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+    box-shadow: 0 0 20px rgba(97, 175, 220, 0.7), 0 0 30px rgba(97, 175, 220, 0.5); /* Efeito neon mais forte ao passar o mouse */
+}
+
+#info-musica {
+    background-color: #1F1F1F; /* Preto escuro */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center; /* Centraliza o texto */
+}
+
+#audio-player {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #3A3A3A;
+    outline: none;
+}
+
+#audio-player::-webkit-media-controls-panel {
+    background-color: #1F1F1F; /* Fundo do painel de controle */
+}
+
+#audio-player::-webkit-media-controls-play-button {
+    background-color: #3A3A3A; /* Botão de play */
+    border-radius: 50%;
+}
+
+.barra-esquerda {
+    background-color: #1F1F1F; /* Preto escuro */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.barra-esquerda ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.barra-esquerda ul li {
+    margin-bottom: 30px;
+}
+
+.barra-esquerda ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.caixa-pesquisa {
+    margin: 0 auto; /* Centraliza a barra de pesquisa */
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    background-color: #3A3A3A;
+    color: #FFFFFF;
+    text-align: left; /* Alinhamento à esquerda */
+    max-width: 600px; /* Limita a largura máxima da barra de pesquisa */
+    width: 100%; /* Permite que a barra de pesquisa utilize toda a largura disponível */
+    margin-left: calc((100% - 600px) / 2); /* Adiciona margem esquerda para centralizar */
+}
+
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.categorias button {
+    background-color: #3A3A3A;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.categorias button:hover {
+    background-color: #5A5A5A; /* Leve destaque ao passar o mouse */
+}
+
+.secao {
+    margin-left: 100px;
+    padding: 20px;
+}
+
+.secao h2 {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.album-card {
+    display: inline-block;
+    background-color: #1F1F1F; /* Preto escuro */
+    width: 150px;
+    margin-right: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.album-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.album-card p {
+    color: #9A9A9A; /* Texto em cinza */
+    font-size: 14px;
+}
+
+.logo {
+    width: 65px; /* Ajustei um pouco o tamanho para evitar o corte */
+    height: auto;
+    margin-bottom: 20px;
+    padding: 5px; /* Adicionei um padding para garantir que a imagem não seja cortada */
+    box-sizing: border-box; /* Inclui o padding no cálculo do tamanho da imagem */
+}

@@ -1,0 +1,31 @@
+*{
+    overflow: hidden;
+}
+body{
+    background-color:#111111 ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    border: solid 1rem #2f2841 ;
+    background-color: #2f2841;
+    width: 35rem;
+    height: 40rem;
+    text-align: center;
+    border-radius: .5rem;
+    align-items: center;
+}
+img{
+    width: 100px; 
+    height: auto;
+    margin-bottom: 20px;
+    padding: 5px; 
+    box-sizing: border-box; 
+}

@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #10101b;
+    color: #1e1e35;
+}
+
+.barra-de-cima {
+    background-color: #1e1e35;
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    padding: 15px;
+}
+
+nav {
+    display: flex; /* Adiciona flex para o nav */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px; /* Espaçamento entre os ícones */
+}
+
+nav ul li a {
+    color: #61afdc;
+    text-decoration: none;
+}
+
+#perfil::before {
+    content: "\f007"; 
+    font-family: "FontAwesome";
+}
+
+#config::before {
+    content: "\f013"; 
+    font-family: "FontAwesome";
+}
+
+.barra-esquerda {
+    background-color: #181831;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.barra-esquerda ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.barra-esquerda ul li {
+    margin-bottom: 30px;
+}
+
+.barra-esquerda ul li a {
+    color: #61afdc;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.caixa-pesquisa {
+    margin: 0 auto; /* Centraliza a barra de pesquisa */
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    background-color: #10101b;
+    color: #61afdc;
+    text-align: center;
+    max-width: 600px; /* Limita a largura máxima da barra de pesquisa */
+    width: 100%; /* Permite que a barra de pesquisa utilize toda a largura disponível */
+    margin-left: calc((100% - 600px) / 2); /* Adiciona margem esquerda para centralizar */
+}
+
+    
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.categorias button {
+    background-color: #1e1e35;
+    color: #61afdc;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.categorias button:hover {
+    background-color: #1e1e35;
+}
+
+.secao {
+    margin-left: 100px;
+    padding: 20px;
+}
+
+.secao h2 {
+    color: #ffffff  ;
+    margin-bottom: 10px;
+}
+
+.album-card {
+    display: inline-block;
+    background-color: #181831;
+    width: 150px;
+    margin-right: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.album-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.album-card p {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.logo {
+    width: 65px; /* Ajustei um pouco o tamanho para evitar o corte */
+    height: auto;
+    margin-bottom: 20px;
+    padding: 5px; /* Adicionei um padding para garantir que a imagem não seja cortada */
+    box-sizing: border-box; /* Inclui o padding no cálculo do tamanho da imagem */
+}

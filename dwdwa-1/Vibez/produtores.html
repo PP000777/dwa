@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área para Produtores</title>
+    <style>
+        body { background-color: #1c1c3c; color: #e0e0ff; font-family: Arial, sans-serif; }
+        form { display: flex; flex-direction: column; width: 300px; margin: auto; }
+        input, button { margin: 5px 0; padding: 10px; border-radius: 5px; border: none; }
+    </style>
+</head>
+<body>
+    <h1>Cadastro de Músicas</h1>
+
+    <form id="form-musica">
+        <input type="text" id="titulo" placeholder="Título da Música" required>
+        <input type="text" id="artista" placeholder="Artista/Banda" required>
+        <input type="text" id="genero" placeholder="Gênero Musical" required>
+        <input type="number" id="duracao" placeholder="Duração (min)" required>
+        <input type="url" id="link" placeholder="Link da Música" required>
+        <button type="submit">Cadastrar Música</button>
+    </form>
+
+    <script>
+        // Função para cadastrar música
+        function cadastrarMusica(event) {
+            event.preventDefault(); // Evitar recarregar a página
+
+            const titulo = document.getElementById('titulo').value;
+            const artista = document.getElementById('artista').value;
+            const genero = document.getElementById('genero').value;
+            const duracao = document.getElementById('duracao').value;
+            const link = document.getElementById('link').value;
+
+            const novaMusica = { titulo, artista, genero, duracao, link };
+
+            // Recuperar lista existente ou criar nova
+            const musicas = JSON.parse(localStorage.getItem('musicas')) || [];
+            musicas.push(novaMusica);
+
+            // Armazenar lista atualizada no localStorage
+            localStorage.setItem('musicas', JSON.stringify(musicas));
+
+            alert('Música cadastrada com sucesso!');
+            event.target.reset(); // Limpar o formulário
+        }
+
+        // Adicionar evento de submit ao formulário
+        document.getElementById('form-musica').addEventListener('submit', cadastrarMusica);
+    </script>
+</body>
+</html>
